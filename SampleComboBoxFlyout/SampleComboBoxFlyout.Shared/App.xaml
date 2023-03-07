@@ -1,0 +1,34 @@
+﻿<Application
+    x:Class="SampleComboBoxFlyout.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SampleComboBoxFlyout">
+	
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+
+				<!-- Load WinUI resources -->
+				<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+
+				<!-- Load Toolkit resources -->
+				<ToolkitResources xmlns="using:Uno.Toolkit.UI" />
+
+				<!-- Uno Material resources -->
+				<MaterialColorsV1 xmlns="using:Uno.Material" />
+
+				<MaterialFonts xmlns="using:Uno.Material" />
+
+				<MaterialResourcesV1 xmlns="using:Uno.Material" />
+
+				<!--  Load Material Toolkit resources  -->
+				<MaterialToolkitResourcesV1 xmlns="using:Uno.Toolkit.UI.Material" />
+
+				<!-- Add resource dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Add resources here -->
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>
