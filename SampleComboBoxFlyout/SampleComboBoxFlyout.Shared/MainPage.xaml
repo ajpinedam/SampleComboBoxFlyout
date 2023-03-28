@@ -10,11 +10,23 @@
 	<local:MultiFrame x:Name="NavigationRoot"
 					  CommaSeparatedSectionsFrameNames="Home,Modal">
 		<Grid Background="White">
-			<Button x:Name="ModalBtn"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="ModalBtn"
 					Click="OpenModal"
 					HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
 					Content="Open Modal" />
-		</Grid>
+
+            <ComboBox Text="Something"
+                      Grid.Row="2"
+                      VerticalAlignment="Center"
+                      Margin="25,0"
+                      PlaceholderText="something"
+                      ItemsSource="6541" />
+        </Grid>
 	</local:MultiFrame>
 	
 </Page>

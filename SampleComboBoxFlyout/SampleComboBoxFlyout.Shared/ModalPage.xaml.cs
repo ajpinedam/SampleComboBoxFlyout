@@ -25,6 +25,12 @@ namespace SampleComboBoxFlyout
         public ModalPage()
         {
             this.InitializeComponent();
+            Loaded += ModalPage_Loaded;
+        }
+
+        private void ModalPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            var t = this.ShowLocalVisualTree(50);
         }
 
         public string[] Tests { get; } = new string[] {

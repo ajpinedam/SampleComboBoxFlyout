@@ -22,6 +22,7 @@ using System.Linq;
 #if __IOS__
 using UIKit;
 using _UIViewController = UIKit.UIViewController;
+using Uno.UI.Controls;
 #else
 using _UIViewController = System.Object;
 #endif
@@ -60,10 +61,14 @@ namespace SampleComboBoxFlyout
 #endif
 	}
 
+
+
+
 	public partial class MultiFrame : Grid
 	{
 		private readonly Dictionary<string, FrameInfo> _frames = new Dictionary<string, FrameInfo>();
 		private readonly TaskCompletionSource<bool> _isReady = new TaskCompletionSource<bool>();
+
 #if WINUI
 		private DispatcherQueue _dispatcher => DispatcherQueue;
 #else
@@ -73,7 +78,7 @@ namespace SampleComboBoxFlyout
 		public MultiFrame()
 		{
 			Loaded += OnLoaded;
-		}
+        }
 
 		private void OnLoaded(object sender, RoutedEventArgs e)
 		{
@@ -84,10 +89,15 @@ namespace SampleComboBoxFlyout
 		{
 			//await HidePreviousFrameAndShowNextFrame(previousFrameName, nextFrameName, UpdateView);
 
-			var uiViewController = new UiViewController(page);
-
+			//var uiViewController = new UiViewController(page);
 #if __IOS__
-			var rootController = UIKit.UIApplication.SharedApplication.KeyWindow.RootViewController;
+
+			//var frame = new Frame();
+			//frame.AddChild(page);
+
+            var uiViewController = new UiViewController(page);
+
+            var rootController = UIKit.UIApplication.SharedApplication.KeyWindow.RootViewController;
 
 			await rootController.PresentViewControllerAsync(uiViewController, animated: true);
 #else
@@ -148,11 +158,18 @@ namespace SampleComboBoxFlyout
 			public UiViewController(Page frame)
 			{
 #if __IOS__
-				View = frame;
+                View = frame;
 #endif
 			}
 
-			public UIViewControllerSectionsTransitionInfo OpeningTransitionInfo { get; set; }
+            public UiViewController(Frame frame)
+            {
+#if __IOS__
+                View = frame;
+#endif
+            }
+
+            public UIViewControllerSectionsTransitionInfo OpeningTransitionInfo { get; set; }
 
 			public void SetTransitionInfo(UIViewControllerSectionsTransitionInfo transitionInfo)
 			{

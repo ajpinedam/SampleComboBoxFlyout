@@ -54,9 +54,9 @@
 			   BasedOn="{StaticResource DefaultComboBoxStyle}">
 			<Setter Property="BorderBrush"
 					Value="{StaticResource SeparatorBrush}" />
-			<Setter Property="BorderThickness"
+            <Setter Property="BorderThickness"
 					Value="0,0,0,1" />
-			<Setter Property="Margin"
+            <Setter Property="Margin"
 					Value="16,0" />
 		</Style>
 
@@ -1026,20 +1026,35 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto" />
 			<RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
 		</Grid.RowDefinitions>
 
 		<ComboBox Grid.Row="0"
 				  Text="Bugged alignement"
 				  VerticalAlignment="Center"
 				  PlaceholderText="bugged"
-				  ItemsSource="{Binding Parent.Tests}"
+				  ItemsSource="123456"
 				  Style="{StaticResource ComboBoxWithSeparatorStyle}" />
 
 		<ComboBox Grid.Row="1"
 				  Text="fixed alignement"
 				  VerticalAlignment="Center"
 				  PlaceholderText="fixed"
-				  ItemsSource="{Binding Tests}"
+				  ItemsSource="123"
 				  Style="{StaticResource ComboBoxWithSeparatorStyleWithFix}" />
-	</Grid>
+
+        <ComboBox Grid.Row="2"
+				  Text="Something"
+				  VerticalAlignment="Center"
+				  PlaceholderText="something"
+				  ItemsSource="6541" />
+
+        <ComboBox Grid.Row="3"
+				  Text="Bugged alignement"
+				  VerticalAlignment="Center"
+				  PlaceholderText="bugged"
+				  ItemsSource="123456"
+				  Style="{StaticResource ComboBoxWithSeparatorStyle}" />
+    </Grid>
 </Page>
